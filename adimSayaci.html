@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adım Sayacı</title>
+</head>
+<body>
+
+    <div id="antrenman">
+        <h3> Günlük Hedef:10.000 Adım</h3>
+        <p>Atılan adım: <span id="adim">0</span></p>
+        <button onclick="adimEkle(1000)">Adım Ekle</button>
+        <progress id="ilerleme" value="0" max="10000"></progress>
+    </div>
+</body>
+<script>
+    let adimSayisi = 0;
+function adimEkle(adim) {
+  adimSayisi += adim;
+  document.getElementById("adim").textContent = adimSayisi;
+  document.getElementById("ilerleme").value = adimSayisi;
+  if (adimSayisi >= 10000) {
+    alert("Tebrikler! Günlük hedefinize ulaştınız.");
+    document.body.style.backgroundColor = "yellow";
+  }
+}
+</script>
+</html>

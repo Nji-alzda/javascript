@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+</head>
+<body>
+  <div class="post">
+    <h2>Javascript Uygulamaları</h2>
+    <button onclick="begen()">Begen</button>
+    <button onclick="yorumEkle()">Yorum Ekle</button>
+    <p>Begeni:<span id="begeniSayisi">0</span></p>
+    <div id="yorumlar"></div>
+  </div>
+</body>
+<script>
+  let begeniSayisi = 0;
+
+  function begen() {
+    begeniSayisi++;
+    document.getElementById("begeniSayisi").textContent = begeniSayisi;
+  }
+
+  function yorumEkle(){
+    let yorum = prompt("Yorumunuzu girin:");
+    let yorumlarDiv = document.getElementById("yorumlar");
+    yorumlarDiv.innerHTML += "<p>Yorumunuz: " + yorum + "</p>";
+  }
+</script>
+</html>
+    
